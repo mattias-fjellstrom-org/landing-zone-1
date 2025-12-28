@@ -1,17 +1,11 @@
 terraform {
   required_providers {
-    random = {
-      source = "hashicorp/random"
+    aws = {
+      source = "hashicorp/aws"
     }
   }
 }
 
-resource "random_integer" "default" {
-  min = 100
-  max = 10000
-}
-
-resource "random_integer" "other" {
-  min = 100
-  max = 10000
+resource "aws_s3_bucket" "default" {
+  bucket_prefix = "github"
 }
